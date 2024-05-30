@@ -1,0 +1,14 @@
+name: GitActions Test
+on: push
+jobs:
+  GitActions-test-job:
+    name: Demo-Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print env variable
+        env:
+          GREETING: Hello you guys here!
+          MY_NAME: my name is leegarden.
+        run:
+          echo $GREETINGS $MY_NAME
+          echo nice to meet u  
