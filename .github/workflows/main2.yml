@@ -1,0 +1,16 @@
+name: GitActions Test2
+on: [push]
+jobs:
+  GitActions-test2-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "github.event - ${{ github.event_name }}"
+      - run: echo "runner.os - ${{ runner.os }}"
+      - run: echo "branch name - ${{ github.ref }}"
+      - run: echo "repository name - ${{ github.repository }}"
+      - run: echo "status - ${{ job.status }}"
+      - name : checkout repository
+        uses: actions/checkout@v2
+      - name: repository file list
+        run:
+          ls ${{ github.workspace }}
